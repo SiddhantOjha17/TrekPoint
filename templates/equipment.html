@@ -1,0 +1,94 @@
+{% extends './common/base.html' %}
+{% block content %}
+<script type="text/javascript">
+    var user = '{{ request.user }}'
+    console.log((user))
+
+    {#function getToken(name) {#}
+    {#    let cookieValue = null;#}
+    {#    if (document.cookie && document.cookie !== '') {#}
+    {#        const cookies = document.cookie.split(';');#}
+    {#        for (let i = 0; i < cookies.length; i++) {#}
+    {#            const cookie = cookies[i].trim();#}
+    {#            // Does this cookie string begin with the name we want?#}
+    {#            if (cookie.substring(0, name.length + 1) === (name + '=')) {#}
+    {#                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));#}
+    {#                break;#}
+    {#            }#}
+    {#        }#}
+    {#    }#}
+    {#    return cookieValue;#}
+    {##}
+    {#const csrftoken = getToken('csrftoken');#}
+</script>
+{#    <div class="row">#}
+{#        {% for product in products %}#}
+{#            <div class="card"#}
+{#                 style="width: 18rem;border-top-left-radius: 20px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;box-shadow: 5px 5px 16px 4px rgba(0,0,0,0.2);margin: 1em;min-width: 280px;max-width: 300px;margin-bottom: 20px;border-style: none;">#}
+{#                <div style="width: 100%;height: 100%; background:  center / cover;border-top-left-radius: 20px;border-top-right-radius: 20px;">#}
+{#                    <img class="img-fluid" src={{ product.imageURL }}>#}
+{#                </div>#}
+{#                <div class="card-body d-flex flex-column" style="height: 262px;">#}
+{#                    <div>#}
+{#                        <h4 style="font-family: 'Source Sans Pro', sans-serif;font-weight: 700;color: rgb(236,11,97);">{{ product.name }}</h4>#}
+{#                        <h6 style="font-family: 'Source Sans Pro', sans-serif;color: rgb(44, 51, 51);font-weight: 600;">#}
+{#                            ₹{{ product.price }}</h6>#}
+{#                        <p style="font-family: 'Source Sans Pro', sans-serif;color: #212121;margin-top: 16px;">-#}
+{#                            Yo<br>- {{ product.description }} <br>- My G<br>- Gang Gang</p>#}
+{#                    </div>#}
+{#                    <button data-product={{ product.id }}; data-action="add"#}
+{#                            class="align-self-end btn-outline-secondary add-btn update-cart"#}
+{#                            data-bss-hover-animate="pulse" href="#"#}
+{#                            style="padding: 4px;background: #b86868;color: rgb(255,255,255);border-radius: 17px;padding-right: 14px;padding-left: 14px;padding-bottom: 6px;font-family: 'Source Sans Pro', sans-serif;margin-top: auto;box-shadow: 2px 2px 16px 1px rgba(117,117,117,0.8);">#}
+{#                        Add to Cart#}
+{#                    </button>#}
+{#                </div>#}
+{#            </div>#}
+ <br><br>
+    <div class="row mb-5">
+        <div class="col-md-8 col-xl-6 text-center mx-auto">
+            <h2>Equipments</h2>
+            <p class="w-lg-50"></p>
+        </div>
+    </div>
+    <br>
+<div class="tab-pane active" role="tabpanel" id="tab-2">
+    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-xl-4">
+        {% for product in products %}
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body flex-grow-0 p-4"><img src="{{ product.imageURL }}"
+                                                                style="padding-left: 15px;margin-left: -23px;margin-right: -6px;padding-right: 0px;">
+                    </div>
+                    <div class="card-footer d-flex flex-column flex-grow-1 justify-content-between p-4">
+                        <div>
+                            <ul class="list-unstyled">
+                                <li class="d-flex mb-2" style="font-size: 25px;"><span
+                                        class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"></span>&nbsp;{{ product.name }}
+                                </li>
+                                <li class="d-flex mb-2"><span
+                                        class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"></span>&nbsp;₹{{ product.price }}
+                                </li>
+                                <li class="d-flex mb-2"><span
+                                        class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"></span>&nbsp;{{ product.description }}
+                                </li>
+                            </ul>
+                        </div>
+{#                        <a class="btn btn-primary d-block w-100" style="background: #283a50;" role="button"#}
+{#                           href="{% url 'name_treks' trek.name %}">Visit Trek</a>#}
+                         <button data-product={{ product.id }} data-action="add"
+                            class="align-self-end btn-outline-secondary add-btn update-cart"
+                            data-bss-hover-animate="pulse" href="#"
+                            style="padding: 4px;background: #283a50;color: rgb(255,255,255);border-radius: 17px;padding-right: 14px;padding-left: 14px;padding-bottom: 6px;font-family: 'Source Sans Pro', sans-serif;margin-top: auto;box-shadow: 2px 2px 16px 1px rgba(28,27,27,0.8);">
+                        Add to Cart
+                    </button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{#{% endfor %}#}
+{##}
+{#    </div>#}
+{% endblock %}

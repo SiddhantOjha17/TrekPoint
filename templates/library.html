@@ -1,0 +1,83 @@
+{% extends './common/base.html' %}
+{% block content %}
+
+    <br><br>
+    <div class="row mb-5">
+        <div class="col-md-8 col-xl-6 text-center mx-auto">
+            <h2>Upcoming Treks</h2>
+            <p class="w-lg-50"></p>
+        </div>
+    </div>
+
+    {#        <figure class="snip1253 ">#}
+    {#            <div class="image">#}
+    {#                <img src={{ trek.imageURL }}>#}
+    {#            </div>#}
+    {#            <figcaption>#}
+    {#                <div class="date"><span class="day">17</span><span class="month">Oct</span></div>#}
+    {#                <h3>{{ trek.name }}</h3>#}
+    {#                <p>#}
+    {#                    {{ trek.short_description }}#}
+    {#                </p>#}
+    {#            </figcaption>#}
+    {#            <footer>#}
+    {#                <a href="{% url 'name_treks' trek.name %}">#}
+    {#                    <button>Open</button>#}
+    {#                </a>#}
+    {#                <button href="{% url 'name_treks' trek.name %}">Open</button>#}
+    {#            </footer>#}
+    {#        </figure>#}
+
+    {#        <div style="width: 500px;height: 425px;margin-left: 23px;padding-right: 36px;margin-top: -50px;">#}
+    {#            <div class="card" data-bss-hover-animate="pulse"><img class="card-img-top w-100 d-block fit-cover"#}
+    {#                                                                  style="height: 200px;" src="{{ trek.imageURL }}">#}
+    {#                <div class="card-body p-4">#}
+    {#                    <p class="text-primary card-text mb-0">Difficult - Moderate</p>#}
+    {#                    <h4 class="card-title">{{ trek.name }}</h4>#}
+    {#                    <p class="card-text">{{ trek.short_description }}&nbsp;&nbsp;</p>#}
+    {#                    <div class="d-flex">#}
+    {#                        <div>#}
+    {#                            <p class="text-muted mb-0"></p>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                    <a class="btn btn-primary" role="button"#}
+    {#                       style="background: #283a50;font-size: 18px;font-family: Aldrich, sans-serif;border-color: #283a50;margin-right: 20px;color: snow;margin-left: 0px;margin-bottom: -15px;"#}
+    {#                       href="{% url 'name_treks' trek.name %}">View Trek</a>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    <div class="tab-pane active" role="tabpanel" id="tab-2">
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+            {% for trek in treks %}
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body flex-grow-0 p-4"><img src="{{ trek.imageURL }}"
+                                                                    style="padding-left: 15px;margin-left: -23px;margin-right: -6px;padding-right: 0px;">
+                        </div>
+                        <div class="card-footer d-flex flex-column flex-grow-1 justify-content-between p-4">
+                            <div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex mb-2" style="font-size: 25px;"><span
+                                            class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"></span>&nbsp;{{ trek.name }}
+                                    </li>
+                                    <li class="d-flex mb-2"><span
+                                            class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"></span>&nbsp;{{ trek.short_description }}
+                                    </li>
+                                    <li class="d-flex mb-2"><span
+                                            class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"></span>&nbsp;Buy
+                                        this trek else I'll kill your whole family.
+                                    </li>
+                                </ul>
+                            </div>
+                            <a class="btn btn-primary d-block w-100" style="background: #283a50;" role="button" href="{% url 'name_treks' trek.name %}">Visit Trek</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <br><br><br><br>
+
+
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends './common/base.html' %}
+{% block content %}
+
+    <script type="text/javascript">
+        var user = '{{ request.user }}'
+        console.log((user))
+    </script>
+
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                    <div class="card-body p-0">
+                        <div class="row g-0">
+                            <div class="col-lg-8">
+                                <div class="p-5">
+                                    <div class="d-flex justify-content-between align-items-center mb-5">
+                                        <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                                        <h6 class="mb-0 text-muted">{{ order.get_cart_items }} items</h6>
+                                    </div>
+                                    <hr class="my-4">
+                                    {% for item in items %}
+                                        <div class="row mb-4 d-flex justify-content-between align-items-center">
+                                            {#                                            <div style="flex: 2">#}
+                                            {#                                                <img src={{ item.product.imageURL }}>#}
+                                            {#                                            </div>#}
+                                            <div class="col-md-2 col-lg-2 col-xl-2">
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-xl-3">
+                                                <h6 class="text-black mb-0">{{ item.product.name }}</h6>
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex ">
+                                                <button data-product={{ item.product.id }} data-action="remove"
+                                                        class="btn btn-link px-2 update-cart"
+                                                        onclick=this.parentNode.querySelector('input[type=number]').stepDown()
+                                                        type="submit">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                                <input id="form1" min="0" name="quantity" value="{{ item.quantity }}"
+                                                       type="number"
+                                                       class="form-control form-control-sm"/>
+
+                                                <button data-product={{ item.product.id }} data-action="add"
+                                                        class="btn btn-link px-2 update-cart"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                <h6 class="mb-0">₹{{ item.product.price }}</h6>
+                                            </div>
+                                            {#                                            <div class="col-md-1 col-lg-1 col-xl-1 text-end">#}
+                                            {#                                                <a href="#" class="text-muted"><i class="fas fa-times"></i></a>#}
+                                            {#                                            </div>#}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="col-lg-4 bg-grey">
+                                <div class="p-5">
+                                    <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                                    <hr class="my-4">
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h5 class="text-uppercase">{{ order.get_cart_items }} Items</h5>
+                                        <h5>₹{{ order.get_cart_total }}</h5>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <h5 class="text-uppercase">Total price</h5>
+                                        <h5>₹{{ order.get_cart_total }}</h5>
+                                    </div>
+
+                                    {#                                    <button type="button" id="rzp-button1" class="btn btn-dark btn-block btn-lg"#}
+                                    {#                                            data-mdb-ripple-color="dark">Checkout#}
+                                    {#                                    </button>#}
+                                    <a type="button" href="{% url 'checkout' %}" class="btn btn-dark btn-block btn-lg"
+                                       data-mdb-ripple-color="dark">Checkout
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    {##}
+    {#    <script>#}
+    {#        var options = {#}
+    {#            "key": "rzp_live_aN2gT0kEgfPz9I", // Enter the Key ID generated from the Dashboard#}
+    {#            "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise#}
+    {#            "currency": "INR",#}
+    {#            "name": "TrekPoint",#}
+    {#            "description": "Transaction",#}
+    {#            "image": "https://example.com/your_logo",#}
+    {#            "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1#}
+    {#            "handler": function (response) {#}
+    {#                alert(response.razorpay_payment_id);#}
+    {#                alert(response.razorpay_order_id);#}
+    {#                alert(response.razorpay_signature)#}
+    {#            },#}
+    {#            "prefill": {#}
+    {#                "name": "Gaurav Kumar",#}
+    {#                "email": "gaurav.kumar@example.com",#}
+    {#                "contact": "9999999999"#}
+    {#            },#}
+    {#            "notes": {#}
+    {#                "address": "Razorpay Corporate Office"#}
+    {#            },#}
+    {#            "theme": {#}
+    {#                "color": "#3399cc"#}
+    {#            }#}
+    {#        };#}
+    {#        var rzp1 = new Razorpay(options);#}
+    {#        rzp1.on('payment.failed', function (response) {#}
+    {#            alert(response.error.code);#}
+    {#            alert(response.error.description);#}
+    {#            alert(response.error.source);#}
+    {#            alert(response.error.step);#}
+    {#            alert(response.error.reason);#}
+    {#            alert(response.error.metadata.order_id);#}
+    {#            alert(response.error.metadata.payment_id);#}
+    {#        });#}
+    {#        document.getElementById('rzp-button1').onclick = function (e) {#}
+    {#            rzp1.open();#}
+    {#            e.preventDefault();#}
+    {#        }#}
+    {#    </script>#}
+
+
+{% endblock %}

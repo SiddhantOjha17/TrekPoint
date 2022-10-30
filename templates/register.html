@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Start</title>
+    <link rel="stylesheet" href="../TP/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=B612+Mono&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Imperial+Aramaic&amp;display=swap">
+    <link rel="stylesheet" href="../TP/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../TP/assets/css/Footer-Dark-Multi-Column-icons.css">
+    <link rel="stylesheet" href="../TP/assets/css/Google-Style-Login-.css">
+    <link rel="stylesheet" href="../TP/assets/css/Growing-Search-Bar-Animated-Text-Input.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../TP/assets/css/Login-with-overlay-image.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" style="background: #283a50;color: var(--bs-white);border-color: var(--bs-white);margin-bottom: 6px;padding-bottom: 35px;">
+        <div class="container-fluid"><img data-bss-hover-animate="tada" src="../TP/assets/img/clipboard-image-4.png" width="25" height="28" style="margin-bottom: -28px;"><a href="#"></a><a class="navbar-brand" href="../TP/index.html" style="color: var(--bs-white);margin-right: 10px;margin-left: 9px;margin-top: -3px;margin-bottom: -28px;">TrekPoint</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2" style="padding-right: 136px;margin-right: 0px;">
+                <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    <li class="nav-item" style="color: var(--bs-white);"></li>
+                    <li class="nav-item" style="color: var(--bs-white);"></li>
+                </ul>
+                <div class="d-flex justify-content-center h-100"></div><a href="#" style="color: var(--bs-white);margin-right: 38px;margin-left: 20px;"></a><a class="btn btn-primary" role="button" style="background: #283a50;font-size: 18px;font-family: Aldrich, sans-serif;border-color: #283a50;margin-bottom: -28px;margin-left: 292px;margin-right: 20px;">Libra<a href="#"></a>ry</a><a href="#" style="color: var(--bs-white);font-family: Aldrich, sans-serif;background: #283a50;border-color: var(--bs-navbar-color);"></a><button class="btn btn-primary" type="button" style="background: #283a50;font-size: 18px;font-family: Aldrich, sans-serif;border-color: #283a50;margin-bottom: -28px;margin-right: 20px;margin-left: -20px;">Shop</button><span class="navbar-text" style="font-family: Aldrich, sans-serif;border-color: var(--bs-navbar-color);">Text</span><button class="btn btn-primary" type="button" style="background: #283a50;font-size: 18px;font-family: Aldrich, sans-serif;margin-right: -30px;margin-left: -48px;border-color: #283a50;margin-bottom: -28px;">Contact</button>
+            </div><a class="btn btn-primary" role="button" style="background: #283a50;margin-left: -61px;font-size: 18px;font-weight: bold;margin-right: -5px;border-color: #283a50;margin-bottom: -28px;" href="../TP/login.html">Login</a>
+        </div>
+    </nav>
+    <div class="container" style="position: absolute;left: 0;right: 0;top: 50%;transform: translateY(-50%);-ms-transform: translateY(-50%);-moz-transform: translateY(-50%);-webkit-transform: translateY(-50%);-o-transform: translateY(-50%);">
+        <div class="row d-flex d-xl-flex justify-content-center justify-content-xl-center">
+            <div class="col-sm-12 col-lg-10 col-xl-9 col-xxl-7 bg-white shadow-lg" style="border-radius: 5px;">
+                <div class="p-5">
+                    <div class="text-center">
+                        <h4 class="text-dark mb-4">Create an Account!</h4>
+                    </div>
+                    <form class="user">
+                        <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Username" required=""></div>
+                        <div class="mb-3"><input class="form-control form-control-user" type="email" id="email" placeholder="Email Address" required=""></div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="password" placeholder="Password" required=""></div>
+                            <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="verifyPassword" placeholder="Repeat Password" required=""></div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" placeholder="First Name" required=""></div>
+                            <div class="col-sm-6"><input class="form-control form-control-user" type="text" placeholder="Last Name" required=""></div>
+                        </div>
+                        <div class="row mb-3">
+                            <p id="emailErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
+                            <p id="passwordErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
+                        </div><a class="btn btn-primary d-block btn-user w-100" role="button" id="submitBtn" href="../TP/login.html">Register Account</a>
+                        <hr>
+                    </form>
+                    <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a></div>
+                    <div class="text-center"><a class="small" href="../TP/login.html">Already have an account? Login!</a></div>
+                </div>
+            </div>
+        </div><script>
+	let email = document.getElementById("email")
+	let password = document.getElementById("password")
+	let verifyPassword = document.getElementById("verifyPassword")
+	let submitBtn = document.getElementById("submitBtn")
+	let emailErrorMsg = document.getElementById('emailErrorMsg')
+	let passwordErrorMsg = document.getElementById('passwordErrorMsg')
+
+	function displayErrorMsg(type, msg) {
+		if(type == "email") {
+			emailErrorMsg.style.display = "block"
+			emailErrorMsg.innerHTML = msg
+			submitBtn.disabled = true
+		}
+		else {
+			passwordErrorMsg.style.display = "block"
+			passwordErrorMsg.innerHTML = msg
+			submitBtn.disabled = true
+		}
+	}
+
+	function hideErrorMsg(type) {
+		if(type == "email") {
+			emailErrorMsg.style.display = "none"
+			emailErrorMsg.innerHTML = ""
+			submitBtn.disabled = true
+			if(passwordErrorMsg.innerHTML == "")
+				submitBtn.disabled = false
+		}
+		else {
+			passwordErrorMsg.style.display = "none"
+			passwordErrorMsg.innerHTML = ""
+			if(emailErrorMsg.innerHTML == "")
+				submitBtn.disabled = false
+		}
+	}
+	
+	// Validate password upon change
+	password.addEventListener("change", function() {
+
+		// If password has no value, then it won't be changed and no error will be displayed
+		if(password.value.length == 0 && verifyPassword.value.length == 0) hideErrorMsg("password")
+		
+		// If password has a value, then it will be checked. In this case the passwords don't match
+		else if(password.value !== verifyPassword.value) displayErrorMsg("password", "Passwords do not match")
+		
+		// When the passwords match, we check the length
+		else {
+			// Check if the password has 8 characters or more
+			if(password.value.length >= 8)
+				hideErrorMsg("password")
+			else
+				displayErrorMsg("password", "Password must be at least 8 characters long")
+		}
+	})
+	
+	verifyPassword.addEventListener("change", function() {
+		if(password.value !== verifyPassword.value)
+			displayErrorMsg("password", "Passwords do not match")
+		else {
+			// Check if the password has 8 characters or more
+			if(password.value.length >= 8)
+				hideErrorMsg("password")
+			else
+				displayErrorMsg("password", "Password must be at least 8 characters long")
+		}
+	})
+
+	// Validate email upon change
+	email.addEventListener("change", function() {
+		// Check if the email is valid using a regular expression (string@string.string)
+		if(email.value.match(/^[^@]+@[^@]+\.[^@]+$/))
+			hideErrorMsg("email")
+		else
+			displayErrorMsg("email", "Invalid email")
+	});
+</script>
+    </div>
+    <script src="../TP/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../TP/assets/js/bs-init-1.js"></script>
+    <script src="../TP/assets/js/bootstrap.min.js"></script>
+    <script src="../TP/assets/js/bs-init.js"></script>
+</body>
+
+</html>
